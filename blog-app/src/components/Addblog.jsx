@@ -19,14 +19,14 @@ const navigate=useNavigate();
 
   const handleSubmit = async () => {
     if(location.state!=null){
-      axiosInstance.put('http://localhost:3000/api/updateblog/'+location.state.val._id,form).then((res)=>{
+      axiosInstance.put('/blogapplication/updateblog/'+location.state.val._id,form).then((res)=>{
       alert(res.data);
       navigate('/blogs')
     })
     }
     else{
     try {
-      const response = await axiosInstance.post('http://localhost:3000/api/addblog', form);
+      const response = await axiosInstance.post('/blogapplication/addblog', form);
       alert(response.data);
       setForm({ title: '', description: '', ImageURL: '' }); 
     } catch (error) {
