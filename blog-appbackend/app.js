@@ -5,7 +5,7 @@ const blogRoutes=require('./routes/blog-routes');
 const userRoutes=require('./routes/userRoutes');
 app.use(cors());
 
-app.use('/api',blogRoutes);
+app.use('/blogapplication',blogRoutes);
 app.use('/user',userRoutes);
 
 require('dotenv').config();
